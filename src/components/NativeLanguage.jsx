@@ -31,6 +31,10 @@ const Title = styled.h2`
   color: #f34900;
   margin: 0 0 16px;
   margin-top: -7%;
+  font-family: "Arial";
+  font-weight: 900;
+  font-size: 64px;
+  text-transform: uppercase;
 
   ${mobile} {
     font-size: 2.5rem;

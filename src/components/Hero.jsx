@@ -236,44 +236,41 @@ const BuyBar = styled.div`
   transform: translateX(-50%);
   z-index: 6;
   display: flex;
-  gap: 16px; /* space between the two controls */
-  ${mobile} {
-    bottom: 18%;
-    width: 100%;
+  gap: 16px;
+
+  a {
+    display: flex;
+    align-items: center;
     gap: 8px;
-    /* flex-direction: column; */
-  }
-`;
+    background: #fff;
+    border: 2px solid #000;
+    padding: 0px 0px;
+    padding-left: 5px;
+    border-radius: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 30%;
+    margin-left: 1%;
+    text-decoration: none;
+    color:  black;
 
-const BuyButton = styled.button`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: #fff;
-  border: 2px solid #000;
-  padding: 0px 0px;
-  padding-left: 5px;
-  border-radius: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  width: 30%;
-  margin-left: 1%;
-
-  img {
-    width: 24px;
-    height: 24px;
-  }
-  ${mobile} {
-    justify-content: center;
-    font-size: 10px;
-    width: 210px;
-    height: 40px;
-    margin: 0;
-    gap: 5px;
-    font-weight: 900;
     img {
-      width: 14px;
-      height: auto;
+      width: 24px;
+      height: 24px;
+    }
+
+    ${mobile} {
+      justify-content: center;
+      font-size: 10px;
+      width: 210px;
+      height: 40px;
+      margin: 0;
+      gap: 5px;
+      font-weight: 900;
+      img {
+        width: 14px;
+        height: auto;
+      }
     }
   }
 `;
@@ -397,10 +394,14 @@ export default function Hero() {
           MEMECOIN
         </Title>
         <BuyBar>
-          <BuyButton>
+          <a
+            href="https://raydium.io/swap/?outputMint=4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk&inputMint=sol"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <img src="header_logo2.png" alt="Buy Icon" />
             Buy $MemeCoin
-          </BuyButton>
+          </a>
 
           <AddressContainer>
             <AddressInput

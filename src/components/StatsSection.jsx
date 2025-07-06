@@ -85,6 +85,10 @@ const TextBlock = styled.div`
     font-size: 28px;
     color: #fff;
     text-transform: uppercase;
+    font-family: "Arial";
+    font-weight: 900;
+    font-size: 54px;
+    text-transform: uppercase;
   }
 
   & p {
@@ -151,6 +155,10 @@ const SectionTitle = styled.h2`
   text-align: center;
   color: #fff;
   margin-bottom: 1.5rem;
+  font-family: "Arial";
+  font-weight: 900;
+  font-size: 64px;
+  text-transform: uppercase;
 
   ${mobile} {
     font-size: 2rem; /* ~32px on mobile */
