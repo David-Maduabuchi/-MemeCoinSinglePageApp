@@ -85,7 +85,7 @@ const BuyButton = styled.button`
   color: #fff;
   border: none;
   padding: 15px 16px;
-  border-radius: 16px;
+  border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
 

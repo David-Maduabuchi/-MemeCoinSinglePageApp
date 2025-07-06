@@ -183,7 +183,7 @@ const Tag = styled(motion.span)`
   color: #fff;
   padding: 6px 12px;
   font-size: 14px;
-  border-radius: 16px;
+  border-radius: 8px;
   font-weight: bold;
 `;
 
@@ -253,7 +253,7 @@ const BuyBar = styled.div`
     border: 2px solid #000;
     padding: 0px 0px;
     padding-left: 5px;
-    border-radius: 16px;
+    border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
     width: 30%;
@@ -315,7 +315,7 @@ const AddressContainer = styled.div`
   display: flex;
   background: #fff;
   border: 2px solid #000;
-  border-radius: 16px;
+  border-radius: 8px;
   overflow: hidden;
   align-items: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
