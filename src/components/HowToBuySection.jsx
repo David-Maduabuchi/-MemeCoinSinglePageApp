@@ -76,10 +76,14 @@ const StepNumber = styled.div`
   position: absolute;
   top: 24px;
   left: 24px;
-  font-size: 6rem;
   font-weight: bold;
   font-family: "Arial", sans-serif;
   color: #f34900;
+  font-family: Arial;
+  font-weight: 900;
+  font-style: Black;
+  font-size: 128px;
+  vertical-align: middle;
 
   ${mobile} {
     font-size: 2.5rem;
