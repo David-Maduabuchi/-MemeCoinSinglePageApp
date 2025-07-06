@@ -189,7 +189,7 @@ const Tag = styled(motion.span)`
 
 const Title = styled(motion.h1)`
   position: absolute;
-  top: 50%;
+  top: 54%;
   left: -2%;
   width: 100%;
   transform: translate(-10%, -10%) scaleY(0.1);
@@ -205,8 +205,8 @@ const Title = styled(motion.h1)`
 
 ${mobile} {
     top: 75%;
-    font-size: clamp(4rem, 45vw, 8rem); /* bigger on small screens */
-    transform: translate(-50%, -50%) scaleY(1);  /* normal height */
+    font-size: clamp(5rem, 34.5vw, 11rem); /* bigger on small screens */
+    transform: translate(-50%, -50%) scaleY(1.7);  /* normal height */
     white-space: normal;            /* allow wrapping if needed */
   }
 
@@ -237,9 +237,12 @@ const BuyBar = styled.div`
   display: flex;
   gap: 16px;
 
-  ${mobile} {
-    display: flex;
-    width: 300px;
+   ${mobile} {
+    align-items: center;       /* center each button */
+    width: 70%;                /* take up most of the screen */
+    gap: 50px;                 /* space between buy & copy */
+    bottom: 12%;               /* if you want it a bit higher/lower */
+    transform: translateX(-50%);
   }
 
   a {
@@ -272,11 +275,12 @@ const BuyBar = styled.div`
     display: none;
     ${mobile} {
       display: flex;
+      
       background: #ff8e00;
       color: #fff;
       border: none;
       padding: 15px 16px;
-      border-radius: 16px;
+      border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
       width: 100%;
@@ -289,16 +293,16 @@ const BuyBar = styled.div`
   .mobile-button-copy {
     display: none;
     ${mobile} {
+      
       display: flex;
-      top: 70%;
       background: #ff8e00;
       color: #fff;
       border: none;
       padding: 15px 16px;
-      border-radius: 16px;
+      border-radius: 8px;
       font-weight: bold;
       cursor: pointer;
-      width: 100%;
+      width: 350px;
       font-size: 12px;
       justify-content: center;
       align-items: center;
@@ -350,6 +354,9 @@ const CopyButton = styled.button`
   margin-right: 2%;
   padding: 2px 5px;
   height: 80%;
+  width: 110px;
+  margin-bottom: 10px;
+  margin-top: 10px;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s;
@@ -364,6 +371,11 @@ const CopyButton = styled.button`
     right: 10px;
 
     position: absolute;
+  }
+`;
+const MobileHide = styled.span`
+  ${mobile} {
+    display: none;
   }
 `;
 export default function Hero() {
@@ -428,7 +440,7 @@ export default function Hero() {
           animate={{ scale: 1, opacity: 1 }}
           transition={{ delay: 1 }}
         >
-          MEMECOIN
+          MEME<MobileHide>COIN</MobileHide>
         </Title>
         <BuyBar>
           <a

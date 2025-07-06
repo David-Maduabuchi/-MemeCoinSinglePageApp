@@ -28,6 +28,7 @@ const Title = styled.h2`
   font-size: 3rem;
   text-align: center;
   color: #ff8e00;
+  margin-top: -60px;
   margin-bottom: 64px;
   /* Updated styling */
   font-family: "Arial";
@@ -37,7 +38,7 @@ const Title = styled.h2`
 
   ${mobile} {
     font-size: 2.25rem;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
   }
 `;
 
