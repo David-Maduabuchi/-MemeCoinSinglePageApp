@@ -144,7 +144,7 @@ const TickerBar = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: #FF8E00;
+  background: #ff8e00;
   overflow: hidden;
   height: 60px;
   z-index: 6;
@@ -315,7 +315,7 @@ const AddressInput = styled.input`
 `;
 
 const CopyButton = styled.button`
-  background: #FF8E00;
+  background: #ff8e00;
   color: #fff;
   border: none;
   margin-top: 1%;
@@ -406,7 +406,7 @@ export default function Hero() {
           <AddressContainer>
             <AddressInput
               type="text"
-              value="CA: TBk4dXtfo6j3rxPc1VJDhA7BsVi2XHK1bi"
+              value="CA: 4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk"
               readOnly
             />
             <CopyButton>Copy address</CopyButton>
