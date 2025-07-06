@@ -27,7 +27,7 @@ const Container = styled.div`
 const Title = styled.h2`
   font-size: 3rem;
   text-align: center;
-  color: #f34900;
+  color: #FF8E00;
   margin-bottom: 64px;
   /* Updated styling */
   font-family: "Arial";
@@ -79,16 +79,15 @@ const StepCard = styled.div`
 
 const StepNumber = styled.div`
   position: absolute;
-  top: 24px;
-  left: 24px;
+  top: 0px;
+  left: 2px;
   font-weight: bold;
   font-family: "Arial", sans-serif;
-  color: #f34900;
+  color: #FF8E00;
   font-family: Arial;
   font-weight: 900;
   font-style: Black;
   font-size: 128px;
-  vertical-align: middle;
 
   ${mobile} {
     font-size: 2.5rem;

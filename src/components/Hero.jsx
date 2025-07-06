@@ -94,7 +94,7 @@ const HeroImage = styled(motion.img)`
 
 const IconTag = styled(motion.div)`
   position: absolute;
-  background: #f34900;
+  background: #ff8e00;
   border-radius: 8px;
   width: 100px;
   height: 45px;
@@ -128,7 +128,6 @@ const StarTag = styled(IconTag)`
 `;
 
 const RocketTag = styled(IconTag)`
-  background: #f34900;
   color: #fff;
   width: 150px;
   height: 45px;
@@ -145,7 +144,7 @@ const TickerBar = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  background: #f34900;
+  background: #FF8E00;
   overflow: hidden;
   height: 60px;
   z-index: 6;
@@ -315,7 +314,7 @@ const AddressInput = styled.input`
 `;
 
 const CopyButton = styled.button`
-  background: #f34900;
+  background: #FF8E00;
   color: #fff;
   border: none;
   margin-top: 1%;
@@ -367,7 +366,7 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.8 }}
         />
         <HeroImage
-          src="comdine.png"
+          src="combine.png"
           alt="MemeCoin Mascot"
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

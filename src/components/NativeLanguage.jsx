@@ -28,7 +28,7 @@ const Section = styled.section`
 /** TITLES & TEXT **/
 const Title = styled.h2`
   font-size: 6rem;
-  color: #f34900;
+  color: #FF8E00;
   margin: 0 0 16px;
   margin-top: -7%;
   font-family: "Arial";
@@ -43,7 +43,7 @@ const Title = styled.h2`
 
 const Subtitle = styled.p`
   font-size: 2.5rem;
-  color: #f34900;
+  color: #FF8E00;
   margin: 0 0 24px;
   font-weight: bold;
 

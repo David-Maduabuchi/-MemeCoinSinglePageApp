@@ -6,7 +6,6 @@ import { FaXTwitter } from "react-icons/fa6";
 const mobile = "@media (max-width: 768px)";
 const tablet = "@media (min-width: 769px) and (max-width: 1280px)";
 
-
 const Nav = styled.nav`
   display: flex;
   align-items: center;
@@ -64,17 +63,25 @@ const Icons = styled.div`
 const IconWrapper = styled.div`
   border: 2px solid #000;
   border-radius: 50%;
-  padding: 8px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
+  a {
+    height: auto;
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    color: black;
+    padding: 8px;
+    border-radius: 50%;
+  }
   ${mobile} {
     display: none;
   }
 `;
 const BuyButton = styled.button`
-  background: #f34900;
+  background: #ff8e00;
   color: #fff;
   border: none;
   padding: 15px 16px;
@@ -97,13 +104,31 @@ export default function Navbar() {
       </BrandLink>
       <Icons>
         <IconWrapper>
-          <FaTelegramPlane size={20} />
+          <a
+            href="https://x.com/thememecoincult?s=09"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaTelegramPlane size={20} />
+          </a>
         </IconWrapper>
         <IconWrapper>
-          <FaXTwitter size={20} />
+          <a
+            href="https://x.com/thememecoincult?s=09"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaXTwitter size={20} />
+          </a>
         </IconWrapper>
         <IconWrapper>
-          <FaDiscord size={20} />
+          <a
+            href="https://x.com/thememecoincult?s=09"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaDiscord size={20} />
+          </a>
         </IconWrapper>
         <BuyButton>BUY NOW</BuyButton>
       </Icons>

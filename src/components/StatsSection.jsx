@@ -31,7 +31,7 @@ const MarketGrid = styled.div`
 
 const DataCard = styled.div`
   background: #fff;
-  border: 2px solid #ff7200;
+  border: 2px solid #ff8e00;
   border-radius: 12px;
   padding: 16px;
   text-align: left;
@@ -43,7 +43,7 @@ const DataCard = styled.div`
 
 const Label = styled.div`
   font-size: 14px;
-  color: #f34900;
+  color: #ff8e00;
   font-weight: 600;
 
   ${mobile} {
