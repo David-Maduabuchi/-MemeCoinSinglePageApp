@@ -152,6 +152,12 @@ const AddressInput = styled.input`
   font-weight: bold;
   outline: none;
   width: 240px;
+  overflow-x: auto;
+  white-space: nowrap;
+
+  /* optional: hide the scrollbar but still allow scrolling */
+  &::-webkit-scrollbar {
+    height: 0;
 
   ${mobile} {
     width: 180px;
@@ -240,7 +246,7 @@ const FooterNote = styled.p`
 
 export default function FooterSection() {
   const handleCopy = () => {
-    const fullValue = "CA: TBk4dXtfo6j3rxPc1VJDhA7BsVi2XHK1bi";
+    const fullValue = "CA: 4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk";
     const addressOnly = fullValue.split("CA:")[1]?.trim(); // gets the part after "CA: "
     if (addressOnly) {
       navigator.clipboard.writeText(addressOnly).then(() => {
@@ -275,7 +281,7 @@ export default function FooterSection() {
               <AddressInput
                 type="text"
                 readOnly
-                value="CA: TBk4dXtfo6j3rxPc1VJDhA7BsVi2XHK1bi"
+                value="CA: 4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk"
               />
               <CopyButton onClick={handleCopy}>Copy address</CopyButton>
             </AddressContainer>
@@ -285,13 +291,28 @@ export default function FooterSection() {
             <SocialHeading>Stay In Touch</SocialHeading>
             <SocialIcons>
               <SocialIcon>
-                <FaTelegramPlane />
+                <a
+                  href="https://x.com/thememecoincult?s=09"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                <FaTelegramPlane /></a>
               </SocialIcon>
               <SocialIcon>
-                <FaXTwitter />
+                <a
+                    href="https://x.com/thememecoincult?s=09"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                <FaXTwitter /></a>
               </SocialIcon>
               <SocialIcon>
-                <FaDiscord />
+                <a
+                      href="https://x.com/thememecoincult?s=09"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                <FaDiscord /></a>
               </SocialIcon>
             </SocialIcons>
           </div>

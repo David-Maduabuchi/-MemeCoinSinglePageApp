@@ -203,11 +203,11 @@ const Title = styled(motion.h1)`
   color: #000;
   pointer-events: none;
 
-  ${mobile} {
-    text-align: center;
-    top: 60%;
-    transform: none;
-    white-space: normal;
+${mobile} {
+    top: 75%;
+    font-size: clamp(4rem, 45vw, 8rem); /* bigger on small screens */
+    transform: translate(-50%, -50%) scaleY(1);  /* normal height */
+    white-space: normal;            /* allow wrapping if needed */
   }
 
   ${tablet} {
@@ -290,6 +290,7 @@ const BuyBar = styled.div`
     display: none;
     ${mobile} {
       display: flex;
+      top: 70%;
       background: #ff8e00;
       color: #fff;
       border: none;
@@ -367,7 +368,7 @@ const CopyButton = styled.button`
 `;
 export default function Hero() {
   const handleCopy = () => {
-    const fullValue = "CA: TBk4dXtfo6j3rxPc1VJDhA7BsVi2XHK1bi";
+    const fullValue = "CA: 4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk";
     const addressOnly = fullValue.split("CA:")[1]?.trim(); // gets the part after "CA: "
     if (addressOnly) {
       navigator.clipboard.writeText(addressOnly).then(() => {
