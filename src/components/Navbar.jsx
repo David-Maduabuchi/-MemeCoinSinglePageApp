@@ -1,0 +1,110 @@
+import React from "react";
+import styled from "styled-components";
+import { FaTelegramPlane, FaDiscord } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
+const mobile = "@media (max-width: 768px)";
+
+const Nav = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 32px;
+  background: #fff;
+  border-bottom: 4px solid #000;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+`;
+
+const NavLinks = styled.div`
+  display: flex;
+  gap: 24px;
+  > a {
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+  }
+
+  ${mobile} {
+    display: none;
+  }
+`;
+const BrandLink = styled.a`
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+`;
+
+const Logo = styled.img`
+  height: 40px;
+  ${mobile} {
+    width: 50px;
+    height: auto;
+  }
+`;
+
+const BrandText = styled.span`
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+
+  ${mobile} {
+    font-size: 14px;
+  }
+`;
+const Icons = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 16px;
+`;
+const IconWrapper = styled.div`
+  border: 2px solid #000;
+  border-radius: 50%;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  ${mobile} {
+    display: none;
+  }
+`;
+const BuyButton = styled.button`
+  background: #f34900;
+  color: #fff;
+  border: none;
+  padding: 15px 16px;
+  border-radius: 16px;
+  font-weight: bold;
+  cursor: pointer;
+`;
+
+export default function Navbar() {
+  return (
+    <Nav>
+      <NavLinks>
+        <a href="#whitepaper">Whitepaper</a>
+
+        <a href="#dapp">dApp</a>
+      </NavLinks>
+      <BrandLink href="/">
+        <Logo src="header_logo2.png" alt="MemeCoin Logo" />
+        <BrandText>MEMECOIN</BrandText>
+      </BrandLink>
+      <Icons>
+        <IconWrapper>
+          <FaTelegramPlane size={20} />
+        </IconWrapper>
+        <IconWrapper>
+          <FaXTwitter size={20} />
+        </IconWrapper>
+        <IconWrapper>
+          <FaDiscord size={20} />
+        </IconWrapper>
+        <BuyButton>BUY NOW</BuyButton>
+      </Icons>
+    </Nav>
+  );
+}

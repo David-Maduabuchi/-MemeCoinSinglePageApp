@@ -1,0 +1,412 @@
+import React from "react";
+import { motion } from "framer-motion";
+import { FaFistRaised, FaRocket, FaStar } from "react-icons/fa";
+import styled, { createGlobalStyle } from "styled-components";
+
+const TickerStyles = createGlobalStyle`
+  @keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+`;
+
+const mobile = "@media (max-width: 768px)";
+const tablet = "@media (min-width: 769px) and (max-width: 1280px)";
+
+const HeroSection = styled.section`
+  position: relative;
+  width: 100%;
+  height: 90vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  color: #fff;
+
+  background: url("placeholder-background.png") no-repeat center center;
+  background-size: cover;
+
+  ${mobile} {
+    height: auto;
+    padding: 60px 0 100px;
+    height: 750px;
+    overflow: auto;
+  }
+  ${tablet} {
+    height: auto;
+    padding: 60px 0 100px;
+    height: 1050px;
+    overflow: auto;
+  }
+`;
+
+const ArcText = styled.svg`
+  position: absolute;
+  top: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 67;
+  width: 80%;
+  max-width: 2600px;
+  ${mobile} {
+    top: 80px;
+    width: 90%;
+  }
+`;
+const Rays = styled(motion.img)`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  pointer-events: none;
+`;
+const MountainFrame = styled(motion.img)`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+`;
+
+const HeroImage = styled(motion.img)`
+  position: relative;
+  z-index: 3;
+  width: 1000px;
+  height: 100%;
+  max-width: 35%;
+  margin-bottom: 110px;
+  ${mobile} {
+    max-width: 100vw;
+    min-width: 200px;
+    width: 450px;
+    margin-bottom: 200px;
+    height: auto;
+  }
+  ${tablet} {
+    max-width: 100vw;
+    height: auto;
+    margin: 0;
+  }
+`;
+
+const IconTag = styled(motion.div)`
+  position: absolute;
+  background: #f34900;
+  border-radius: 8px;
+  width: 100px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  pointer-events: auto;
+  rotate: -18deg;
+  top: 20%;
+  left: 25%;
+  z-index: 40;
+  ${mobile} {
+    font-size: 12px;
+    padding: 4px 8px;
+    border: 2px;
+    width: 70px;
+    font-size: 9px;
+    gap: 5px;
+    left: 5%;
+  }
+`;
+
+const StarTag = styled(IconTag)`
+  top: 50%;
+  left: 32%;
+
+  ${mobile} {
+    left: 2%;
+  }
+`;
+
+const RocketTag = styled(IconTag)`
+  background: #f34900;
+  color: #fff;
+  width: 150px;
+  height: 45px;
+  box-shadow: 0 0 8px rgba(255, 140, 0, 0.6);
+  rotate: 5deg;
+  top: 25%;
+  left: 70%;
+  ${mobile} {
+    left: 65%;
+    width: 110px;
+  }
+`;
+const TickerBar = styled.div`
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: #f34900;
+  overflow: hidden;
+  height: 60px;
+  z-index: 6;
+
+  ${mobile} {
+    height: 60px;
+  }
+`;
+
+const TickerContent = styled.div`
+  display: inline-block;
+  white-space: nowrap;
+  padding-left: 0;
+  padding-top: 15px;
+  animation: scroll 20s linear infinite;
+  color: #fff;
+  font-weight: bold;
+  line-height: 40px;
+  font-size: 40px;
+
+  ${mobile} {
+    line-height: 40px;
+    font-size: 20px;
+    animation-duration: 10s;
+  }
+`;
+const TagContainer = styled.div`
+  position: relative;
+  z-index: 6;
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+`;
+const Tag = styled(motion.span)`
+  background: rgba(255, 140, 0, 0.9);
+  color: #fff;
+  padding: 6px 12px;
+  font-size: 14px;
+  border-radius: 16px;
+  font-weight: bold;
+`;
+
+const Title = styled(motion.h1)`
+  position: absolute;
+  top: 50%;
+  left: -2%;
+  width: 100%;
+  transform: translate(-10%, -10%) scaleY(0.1);
+  transform-origin: center center;
+  text-align: center;
+  z-index: 5;
+  font-size: 18.7vw;
+  white-space: nowrap;
+  margin: 0;
+  letter-spacing: 0;
+  color: #000;
+  pointer-events: none;
+
+  ${mobile} {
+    /* font-size: clamp(3rem, 20vw, 8rem); */
+    font-size: 3rem;
+    top: 60%;
+    transform: none;
+    white-space: normal;
+  }
+
+  ${tablet} {
+    /* font-size: clamp(3rem, 20vw, 8rem); */
+    font-size: 8rem;
+    top: 80%;
+    transform: none;
+    white-space: normal;
+  }
+`;
+
+const TitleWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: -2%;
+  transform: translate(-50%, -50%) scaleY(0.5);
+  transform-origin: center center;
+  width: 100%;
+  text-align: center;
+  z-index: 5;
+`;
+
+const BuyBar = styled.div`
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 6;
+  display: flex;
+  gap: 16px; /* space between the two controls */
+  ${mobile} {
+    flex-direction: column;
+    bottom: 10%;
+    width: 90%;
+  }
+`;
+
+const BuyButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; /* space between icon and text */
+  background: #fff;
+  border: 2px solid #000;
+  padding: 0px 0px;
+  padding-left: 5px;
+  border-radius: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  width: 30%;
+  margin-left: 1%;
+
+  img {
+    width: 24px;
+    height: 24px;
+  }
+  ${mobile} {
+    justify-content: center;
+    width: 100%;
+    font-size: 14px;
+  }
+`;
+
+const AddressContainer = styled.div`
+  display: flex;
+  background: #fff;
+  border: 2px solid #000;
+  border-radius: 16px;
+  overflow: hidden;
+  align-items: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+
+  ${mobile} {
+    width: 100%;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px;
+  }
+`;
+
+const AddressLabel = styled.span`
+  padding: 14px 20px;
+  background: #f7f7f7;
+  font-weight: bold;
+`;
+
+const AddressInput = styled.input`
+  border: none;
+  padding: 14px;
+  font-weight: bold;
+  width: 320px;
+  font-family: monospace;
+  outline: none;
+
+  ${mobile} {
+    font-size: 10px;
+  }
+`;
+
+const CopyButton = styled.button`
+  background: #f34900;
+  color: #fff;
+  border: none;
+  margin-top: 1%;
+  margin-right: 2%;
+  padding: 2px 5px;
+  height: 80%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+  &:hover {
+    background: #e07b00;
+  }
+
+  ${mobile} {
+    margin: 0;
+    font-size: 10px;
+    width: 130px;
+  }
+`;
+export default function Hero() {
+  const iconBounce = {
+    animate: { y: [0, -10, 0] },
+    transition: { repeat: Infinity, duration: 3, ease: "easeInOut" },
+  };
+  const rocketBounce = {
+    animate: { y: [0, -15, 0] },
+    transition: { repeat: Infinity, duration: 2.5, ease: "easeInOut" },
+  };
+
+  return (
+    <>
+      <TickerStyles />
+      <HeroSection>
+        <Rays
+          src="rays.png"
+          alt="Rays Overlay"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+        />
+        <MountainFrame
+          src="mountain.png"
+          alt="Mountain Frame"
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.4, duration: 0.8 }}
+        />
+        <HeroImage
+          src="comdine.png"
+          alt="MemeCoin Mascot"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        />
+
+        <IconTag {...iconBounce} whileHover={{ scale: 1.2 }}>
+          <FaFistRaised size={20} />
+          HODL
+        </IconTag>
+        <RocketTag {...rocketBounce} whileHover={{ scale: 1.3 }}>
+          <FaRocket size={20} />
+          TO THE MOON
+        </RocketTag>
+        <StarTag {...iconBounce} whileHover={{ scale: 1.2 }}>
+          <FaStar size={20} />
+          WAGMI
+        </StarTag>
+        <Title
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 1 }}
+        >
+          MEMECOIN
+        </Title>
+        <BuyBar>
+          <BuyButton>
+            <img src="header_logo2.png" alt="Buy Icon" />
+            Buy $MemeCoin
+          </BuyButton>
+
+          <AddressContainer>
+            <AddressInput
+              type="text"
+              value="CA: TBk4dXtfo6j3rxPc1VJDhA7BsVi2XHK1bi"
+              readOnly
+            />
+            <CopyButton>Copy address</CopyButton>
+          </AddressContainer>
+        </BuyBar>
+        <TickerBar>
+          <TickerContent>
+            No pitch decks. No whitepapers. No complex tech. Just the mostviral,
+            relatable, and unstoppable narrative in crypto history &nbsp;{" "}
+          </TickerContent>
+        </TickerBar>
+      </HeroSection>
+    </>
+  );
+}
