@@ -4,6 +4,8 @@ import { FaTelegramPlane, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
 const mobile = "@media (max-width: 768px)";
+const tablet = "@media (min-width: 769px) and (max-width: 1280px)";
+
 
 const Nav = styled.nav`
   display: flex;

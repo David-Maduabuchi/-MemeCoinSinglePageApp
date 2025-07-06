@@ -3,6 +3,8 @@ import React from "react";
 import styled from "styled-components";
 
 const mobile = "@media (max-width: 768px)";
+const tablet = "@media (min-width: 769px) and (max-width: 1280px)";
+
 
 const Section = styled.section`
   position: relative;

@@ -1,13 +1,14 @@
 // src/components/StatsSection.jsx
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 /** breakpoints **/
-const mobile = '@media (max-width: 768px)';
+const mobile = "@media (max-width: 768px)";
+const tablet = "@media (min-width: 769px) and (max-width: 1280px)";
 
 /** SECTION WRAPPER **/
 const Section = styled.section`
-  margin: 0;             
+  margin: 0;
   padding: 0 20px 80px;
   background: #181818;
   color: #fff;
@@ -79,13 +80,10 @@ const TextBlock = styled.div`
   font-size: 16px;
   color: #ddd;
 
-
   & h2 {
     margin-bottom: 16px;
     font-size: 28px;
     color: #fff;
-    
-
   }
 
   & p {
@@ -93,7 +91,9 @@ const TextBlock = styled.div`
   }
 
   ${mobile} {
-    & h2 { font-size: 24px; }
+    & h2 {
+      font-size: 24px;
+    }
     font-size: 14px;
   }
 `;
@@ -109,7 +109,7 @@ const ChartContainer = styled.div`
 const ChartImage = styled.img`
   width: 100%;
   height: 100%;
-  
+
   display: block;
   border-radius: 5%;
 `;
@@ -123,7 +123,7 @@ const Connector = styled.div`
   font-weight: bold;
 
   &::before {
-    content: '';
+    content: "";
     display: block;
     width: 40px;
     height: 2px;
@@ -144,7 +144,7 @@ const CexLabel = styled(Connector)`
 `;
 
 const SectionTitle = styled.h2`
-  font-size: 2.5rem;           /* ~40px */
+  font-size: 2.5rem; /* ~40px */
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
@@ -152,11 +152,10 @@ const SectionTitle = styled.h2`
   margin-bottom: 1.5rem;
 
   ${mobile} {
-    font-size: 2rem;           /* ~32px on mobile */
+    font-size: 2rem; /* ~32px on mobile */
     margin-bottom: 1rem;
   }
 `;
-
 
 const OverflowImage = styled.img`
   position: relative;
@@ -164,16 +163,13 @@ const OverflowImage = styled.img`
   transform: translateX(-50%);
   width: 100vw;
   display: block;
-  margin: -8px 0 0;         /* negative top margin removes the space */
+  margin: -8px 0 0; /* negative top margin removes the space */
 `;
 export default function StatsSection() {
   return (
     <Section>
-         <OverflowImage
-        src="subtract.png"
-        alt="Top decorative overflow"
-      />
-        <SectionTitle>Live Market Data</SectionTitle>
+      <OverflowImage src="subtract.png" alt="Top decorative overflow" />
+      <SectionTitle>Live Market Data</SectionTitle>
       {/* Live Market Data */}
       <MarketGrid>
         <DataCard>
@@ -199,9 +195,10 @@ export default function StatsSection() {
         <TextBlock>
           <h2>MEMINOMICS</h2>
           <p>
-            60% of the tokens were sent to the liquidity pool. LP tokens were burnt once renounced.
-            The remaining 40% of the supply is being held in a multi-sig wallet only to be
-            used as tokens for future centralized exchange listings, bridges and liquidity pools.
+            60% of the tokens were sent to the liquidity pool. LP tokens were
+            burnt once renounced. The remaining 40% of the supply is being held
+            in a multi-sig wallet only to be used as tokens for future
+            centralized exchange listings, bridges and liquidity pools.
           </p>
         </TextBlock>
 
@@ -210,7 +207,6 @@ export default function StatsSection() {
             src="meminomics2.png"
             alt="Token distribution chart (60% liquidity, 40% CEX)"
           />
-          
         </ChartContainer>
       </MeminomicsWrapper>
     </Section>

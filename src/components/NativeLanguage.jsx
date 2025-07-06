@@ -1,9 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-
-const mobile = '@media (max-width: 768px)';
-const tablet = '@media (max-width: 1280px)';
+const mobile = "@media (max-width: 768px)";
+const tablet = "@media (min-width: 769px) and (max-width: 1280px)";
 
 /** FULL-BLEED STRIPES OVERFLOW **/
 const OverflowImage = styled.img`
@@ -54,7 +53,7 @@ const Text = styled.p`
   max-width: 640px;
   margin: 0 auto 16px;
   font-weight: 900;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   color: #333;
   line-height: 1.6;
   font-size: 1rem;
@@ -68,9 +67,8 @@ const Text = styled.p`
 /** FLOOR + MOUNTAINS BACKGROUND for Mascots **/
 const MascotArea = styled.div`
   position: relative;
-  background:
-    url('') bottom center / cover no-repeat,
-    url('Nativegroup.png') bottom center / cover no-repeat;
+  background: url("") bottom center / cover no-repeat,
+    url("Nativegroup.png") bottom center / cover no-repeat;
   padding: 120px 0 40px;
   display: flex;
   justify-content: space-around;
@@ -86,36 +84,20 @@ const Mascot = styled.img`
   max-width: 30%;
   z-index: 3;
   margin-bottom: -100px;
-  margin-right: -300px; 
+  margin-right: -300px;
   ${mobile} {
-    width: 100px;
-    max-width: 100vw;
+    width: 300px;
+    margin-right: -200px;
   }
   ${tablet} {
     margin-top: 150px;
+    margin-right: 0;
     width: 200px;
     max-width: 100vw;
   }
 `;
 
-const MascotRight = styled.img`
-  width: 100%;
-  max-width: 30%;
-  z-index: 3;
-  margin-bottom: -100px;
-  margin-left: -300px;
-  ${mobile} {
-    width: 100px;
-    max-width: 100vw;
-  }
-  ${tablet} {
-    margin-top: 150px;
-    width: 200px;
-    max-width: 100vw;
-  }
-`;
 const MascotCenter = styled.img`
-  width: 700px;
   height: auto;
   max-height: 1500px;
   position: relative;
@@ -124,7 +106,6 @@ const MascotCenter = styled.img`
   margin-bottom: -100px;
 
   ${mobile} {
-    position: absolute;
     width: 300px;
     z-index: 1;
     height: auto;
@@ -138,13 +119,32 @@ const MascotCenter = styled.img`
   }
 `;
 
+const MascotRight = styled.img`
+  width: 100%;
+  max-width: 30%;
+  z-index: 3;
+  margin-bottom: -100px;
+  margin-left: -300px;
+  ${mobile} {
+    width: 300px;
+    height: auto;
+    margin-left: -200px;
+  }
+  ${tablet} {
+    margin-top: 150px;
+    margin-right: 0;
+    width: 200px;
+    max-width: 100vw;
+  }
+`;
+
 const TextWrapper = styled.div`
   position: relative;
-  z-index: 5;               /* sits above the mascots */
+  z-index: 5; /* sits above the mascots */
   margin: 0 auto;
   max-width: 640px;
-  margin-bottom: -200px;     /* pull it down over the top of the mascots */
-  
+  margin-bottom: -200px; /* pull it down over the top of the mascots */
+
   ${mobile} {
     margin-bottom: -30px;
   }
@@ -155,56 +155,45 @@ const BottomOverflowImage = styled.img`
   left: 51%;
 
   transform: translateX(-50%);
-  width: 100vw;            /* full viewport width */
+  width: 100vw; /* full viewport width */
   display: block;
   object-fit: cover;
   margin-top: -4.5%;
   padding-bottom: 0%; /* space for mascots to sit */
-  padding-top: 0; 
+  padding-top: 0;
 `;
 
 export default function MemeLanguageSection() {
   return (
     <>
       {/* full-width red stripes */}
-      <OverflowImage
-        src="overflow1.png"
-        alt="Decorative stripe overflow"
-      />
+      <OverflowImage src="overflow1.png" alt="Decorative stripe overflow" />
 
       <Section>
         <Title>$MEMECOIN</Title>
         <Subtitle>Speaks the internet’s native language—MEMES!</Subtitle>
 
         <Text>
-          When retail floods in, they’re not looking for whitepapers…
-          They’re looking for the next Doge.
+          When retail floods in, they’re not looking for whitepapers… They’re
+          looking for the next Doge.
         </Text>
         <Text>
           $MEMECOIN is instantly understood, effortlessly shared, and
           emotionally resonant.
         </Text>
-          <TextWrapper>
-        <Text>
-          It doesn’t need explaining—it just clicks.
-        </Text>
-          </TextWrapper>
+        <TextWrapper>
+          <Text>It doesn’t need explaining—it just clicks.</Text>
+        </TextWrapper>
       </Section>
 
       {/* three-mascot layout */}
       <MascotArea>
-        <Mascot
-          src="native1.png"
-          alt="MemeCoin mascot on laptop, left"
-        />
+        <Mascot src="native1.png" alt="MemeCoin mascot on laptop, left" />
         <MascotCenter
           src="native2.png"
           alt="MemeCoin mascot standing, center"
         />
-        <MascotRight
-          src="native3.png"
-          alt="MemeCoin mascot on laptop, right"
-        />
+        <MascotRight src="native3.png" alt="MemeCoin mascot on laptop, right" />
       </MascotArea>
       <BottomOverflowImage
         src="subtract1.png"
