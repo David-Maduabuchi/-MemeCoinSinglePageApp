@@ -16,7 +16,7 @@ const tablet = "@media (min-width: 769px) and (max-width: 1280px)";
 const HeroSection = styled.section`
   position: relative;
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -29,8 +29,8 @@ const HeroSection = styled.section`
 
   ${mobile} {
     height: auto;
-    padding: 60px 0 100px;
-    height: 600px;
+    /* padding: 60px; */
+    height: 700px;
     overflow: auto;
   }
   ${tablet} {
@@ -251,7 +251,7 @@ const BuyBar = styled.div`
     width: 30%;
     margin-left: 1%;
     text-decoration: none;
-    color:  black;
+    color: black;
 
     img {
       width: 24px;
@@ -266,6 +266,7 @@ const BuyBar = styled.div`
       margin: 0;
       gap: 5px;
       font-weight: 900;
+      width: 80vw;
       img {
         width: 14px;
         height: auto;

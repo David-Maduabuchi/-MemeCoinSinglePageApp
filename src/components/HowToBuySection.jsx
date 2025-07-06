@@ -5,11 +5,11 @@ import styled from "styled-components";
 const mobile = "@media (max-width: 768px)";
 const tablet = "@media (min-width: 769px) and (max-width: 1280px)";
 
-
 const Section = styled.section`
   position: relative;
   background: url("beach.png") bottom center no-repeat;
-  background-size: cover;
+  background-size: contain;
+  background-position: 0% 20%;
   padding: 100px 20px 60px;
   color: #333;
 
@@ -27,7 +27,7 @@ const Container = styled.div`
 const Title = styled.h2`
   font-size: 3rem;
   text-align: center;
-  color: #FF8E00;
+  color: #ff8e00;
   margin-bottom: 64px;
   /* Updated styling */
   font-family: "Arial";
@@ -79,11 +79,11 @@ const StepCard = styled.div`
 
 const StepNumber = styled.div`
   position: absolute;
-  top: 0px;
+  top: 10px;
   left: 2px;
   font-weight: bold;
   font-family: "Arial", sans-serif;
-  color: #FF8E00;
+  color: #ff8e00;
   font-family: Arial;
   font-weight: 900;
   font-style: Black;
@@ -108,9 +108,11 @@ const StepTitle = styled.h3`
 `;
 
 const StepText = styled.p`
-  font-size: 1rem;
-  line-height: 1.6;
-  margin: 0;
+  font-family: Arial;
+  font-weight: 400;
+  font-style: Regular;
+  font-size: 22px;
+  line-height: 126%;
 
   ${mobile} {
     font-size: 0.9rem;

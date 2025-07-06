@@ -1,22 +1,20 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FaTelegramPlane, FaDiscord } from 'react-icons/fa';
+import React from "react";
+import styled from "styled-components";
+import { FaTelegramPlane, FaDiscord } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
-const mobile = '@media (max-width: 768px)';
+const mobile = "@media (max-width: 768px)";
 const tablet = "@media (min-width: 769px) and (max-width: 1280px)";
-
 
 const OverflowStripe = styled.img`
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-  width: 100vw;        /* spans the entire viewport width */
+  width: 100vw;
   display: block;
   object-fit: cover;
-  margin: 0;           /* no extra gaps */
+  margin: 0;
 `;
-
 
 const Section = styled.section`
   position: relative;
@@ -32,8 +30,8 @@ const BackgroundText = styled.h1`
   top: 10px;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 20vw;                 /* scales with viewport */
-  color: rgba(255,255,255,0.05);   /* very faint */
+  font-size: 20vw;
+  color: rgba(255, 255, 255, 0.05);
   white-space: nowrap;
   user-select: none;
   pointer-events: none;
@@ -79,9 +77,9 @@ const Content = styled.div`
 
 const Title = styled.h2`
   font-size: 2.5rem;
-  color: #f34900;
+  color: #ff8e00;
   margin: 0;
-  padding-top:10%;
+  padding-top: 10%;
 
   ${mobile} {
     font-size: 2rem;
@@ -93,7 +91,7 @@ const Tagline = styled.p`
   max-width: 600px;
   margin: 0;
   font-weight: 500;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   line-height: 1.4;
 
   ${mobile} {
@@ -125,7 +123,10 @@ const BuyButton = styled.button`
   font-weight: bold;
   cursor: pointer;
 
-  img { width: 24px; height: 24px; }
+  img {
+    width: 24px;
+    height: 24px;
+  }
 
   &:hover {
     background: #e2e2e2;
@@ -137,7 +138,7 @@ const AddressContainer = styled.div`
   background: #fff;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 `;
 
 const AddressInput = styled.input`
@@ -154,7 +155,7 @@ const AddressInput = styled.input`
 `;
 
 const CopyButton = styled.button`
-  background: #f34900;
+  background: #ff8e00;
   color: #fff;
   border: none;
   border-radius: 8px;
@@ -170,7 +171,7 @@ const CopyButton = styled.button`
 /** Stay In Touch **/
 const SocialHeading = styled.h4`
   font-size: 1.25rem;
-  color: #f34900;
+  color: #ff8e00;
   margin-bottom: 5px;
 
   ${mobile} {
@@ -178,9 +179,9 @@ const SocialHeading = styled.h4`
   }
 `;
 const SocialIcon = styled.div`
-  background: #fff;            /* white circle */
-  border-radius: 50%;          /* make it a circle */
-  width: 44px;                 /* circle diameter */
+  background: #fff;
+  border-radius: 50%;
+  width: 44px;
   height: 44px;
   display: flex;
   align-items: center;
@@ -189,9 +190,9 @@ const SocialIcon = styled.div`
   transition: transform 0.2s;
 
   svg {
-    width: 24px;               /* icon size */
+    width: 24px;
     height: 24px;
-    color: #101010;            /* icon color */
+    color: #101010;
   }
 
   &:hover {
@@ -219,13 +220,12 @@ const SocialIcons = styled.div`
   }
 `;
 
-
 /** Footer note **/
 const FooterNote = styled.p`
   margin: 12px 0 0;
   font-size: 24px;
   color: #fff;
-font-weight: 300;
+  font-weight: 300;
   text-align: left;
 
   ${mobile} {
@@ -237,20 +237,14 @@ font-weight: 300;
 export default function FooterSection() {
   return (
     <Section>
-        <OverflowStripe
-        src="overflow2.png"
-        alt="Footer top decorative stripe"
-      />
+      <OverflowStripe src="overflow2.png" alt="Footer top decorative stripe" />
       <BackgroundText>MEMECOIN</BackgroundText>
       <Grid>
-        <MascotImage
-          src="footer-mascot.png"
-          alt="MemeCoin mascot"
-        />
+        <MascotImage src="footer-mascot.png" alt="MemeCoin mascot" />
         <Content>
           <Title>$MEMECOIN</Title>
           <Tagline>
-            Is The Apex of Speculation Meets Storytelling. Don’t Overthink It.  
+            Is The Apex of Speculation Meets Storytelling. Don’t Overthink It.
             Just Vibe In.
           </Tagline>
 
@@ -272,9 +266,15 @@ export default function FooterSection() {
           <div>
             <SocialHeading>Stay In Touch</SocialHeading>
             <SocialIcons>
-                <SocialIcon><FaTelegramPlane /></SocialIcon>
-                <SocialIcon><FaXTwitter /></SocialIcon>
-                <SocialIcon><FaDiscord /></SocialIcon>
+              <SocialIcon>
+                <FaTelegramPlane />
+              </SocialIcon>
+              <SocialIcon>
+                <FaXTwitter />
+              </SocialIcon>
+              <SocialIcon>
+                <FaDiscord />
+              </SocialIcon>
             </SocialIcons>
           </div>
 
