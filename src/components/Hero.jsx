@@ -237,6 +237,11 @@ const BuyBar = styled.div`
   display: flex;
   gap: 16px;
 
+  ${mobile} {
+    display: flex;
+    width: 300px;
+  }
+
   a {
     display: flex;
     align-items: center;
@@ -259,18 +264,44 @@ const BuyBar = styled.div`
     }
 
     ${mobile} {
+      display: none;
+    }
+  }
+
+  a.mobile-button-buy {
+    display: none;
+    ${mobile} {
+      display: flex;
+      background: #ff8e00;
+      color: #fff;
+      border: none;
+      padding: 15px 16px;
+      border-radius: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      font-size: 12px;
       justify-content: center;
-      font-size: 10px;
-      width: 210px;
-      height: 40px;
-      margin: 0;
-      gap: 5px;
-      font-weight: 900;
-      width: 80vw;
-      img {
-        width: 14px;
-        height: auto;
-      }
+      align-items: center;
+    }
+  }
+
+  .mobile-button-copy {
+    display: none;
+    ${mobile} {
+      display: flex;
+      background: #ff8e00;
+      color: #fff;
+      border: none;
+      padding: 15px 16px;
+      border-radius: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      width: 100%;
+      font-size: 12px;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
   }
 `;
@@ -286,11 +317,7 @@ const AddressContainer = styled.div`
   position: relative;
 
   ${mobile} {
-    width: 100%;
-    height: 40px;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0px 10px;
+    display: none;
   }
 `;
 
@@ -339,6 +366,15 @@ const CopyButton = styled.button`
   }
 `;
 export default function Hero() {
+  const handleCopy = () => {
+    const fullValue = "CA: TBk4dXtfo6j3rxPc1VJDhA7BsVi2XHK1bi";
+    const addressOnly = fullValue.split("CA:")[1]?.trim(); // gets the part after "CA: "
+    if (addressOnly) {
+      navigator.clipboard.writeText(addressOnly).then(() => {
+        alert("Address copied: " + addressOnly);
+      });
+    }
+  };
   const iconBounce = {
     animate: { y: [0, -10, 0] },
     transition: { repeat: Infinity, duration: 3, ease: "easeInOut" },
@@ -403,14 +439,26 @@ export default function Hero() {
             Buy $MemeCoin
           </a>
 
+          <a
+            href="https://raydium.io/swap/?outputMint=4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk&inputMint=sol"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mobile-button-buy"
+          >
+            Buy Now
+          </a>
+
           <AddressContainer>
             <AddressInput
               type="text"
               value="CA: 4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk"
               readOnly
             />
-            <CopyButton>Copy address</CopyButton>
+            <CopyButton onClick={handleCopy}>Copy address</CopyButton>
           </AddressContainer>
+          <CopyButton className="mobile-button-copy" onClick={handleCopy}>
+            Copy address
+          </CopyButton>
         </BuyBar>
         <TickerBar>
           <TickerContent>

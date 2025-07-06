@@ -122,6 +122,10 @@ const BuyButton = styled.button`
   border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
   img {
     width: 24px;
@@ -235,6 +239,15 @@ const FooterNote = styled.p`
 `;
 
 export default function FooterSection() {
+  const handleCopy = () => {
+    const fullValue = "CA: TBk4dXtfo6j3rxPc1VJDhA7BsVi2XHK1bi";
+    const addressOnly = fullValue.split("CA:")[1]?.trim(); // gets the part after "CA: "
+    if (addressOnly) {
+      navigator.clipboard.writeText(addressOnly).then(() => {
+        alert("Address copied: " + addressOnly);
+      });
+    }
+  };
   return (
     <Section>
       <OverflowStripe src="overflow2.png" alt="Footer top decorative stripe" />
@@ -250,8 +263,13 @@ export default function FooterSection() {
 
           <BuyBar>
             <BuyButton>
-              <img src="header_logo2.png" alt="Coin Icon" />
-              Buy $MemeCoin
+              <a
+                href="https://raydium.io/swap/?outputMint=4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk&inputMint=sol"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                BUY NOW
+              </a>
             </BuyButton>
             <AddressContainer>
               <AddressInput
@@ -259,7 +277,7 @@ export default function FooterSection() {
                 readOnly
                 value="CA: TBk4dXtfo6j3rxPc1VJDhA7BsVi2XHK1bi"
               />
-              <CopyButton>Copy address</CopyButton>
+              <CopyButton onClick={handleCopy}>Copy address</CopyButton>
             </AddressContainer>
           </BuyBar>
 

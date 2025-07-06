@@ -88,6 +88,11 @@ const BuyButton = styled.button`
   border-radius: 16px;
   font-weight: bold;
   cursor: pointer;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 `;
 
 export default function Navbar() {
@@ -130,7 +135,15 @@ export default function Navbar() {
             <FaDiscord size={20} />
           </a>
         </IconWrapper>
-        <BuyButton>BUY NOW</BuyButton>
+        <BuyButton>
+          <a
+            href="https://raydium.io/swap/?outputMint=4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk&inputMint=sol"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            BUY NOW
+          </a>
+        </BuyButton>
       </Icons>
     </Nav>
   );
