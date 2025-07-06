@@ -86,8 +86,12 @@ const Mascot = styled.img`
   margin-bottom: -100px;
   margin-right: -300px;
   ${mobile} {
-    width: 300px;
-    margin-right: -200px;
+    max-width: 5000px;
+    width: 125px;
+    margin: 0;
+    margin-right: -50px;
+
+    margin-bottom: -50px;
   }
   ${tablet} {
     margin-top: 150px;
@@ -103,12 +107,14 @@ const MascotCenter = styled.img`
   position: relative;
   z-index: 3;
   margin-top: 0;
-  margin-bottom: -100px;
+  width: 470px;
+  margin-bottom: -200px;
 
   ${mobile} {
-    width: 300px;
+    width: 250px;
     z-index: 1;
     height: auto;
+    margin-bottom: -110px;
   }
 
   ${tablet} {
@@ -126,9 +132,12 @@ const MascotRight = styled.img`
   margin-bottom: -100px;
   margin-left: -300px;
   ${mobile} {
-    width: 300px;
-    height: auto;
-    margin-left: -200px;
+    max-width: 5000px;
+    width: 125px;
+    margin: 0;
+    margin-left: -70px;
+
+    margin-bottom: -50px;
   }
   ${tablet} {
     margin-top: 150px;

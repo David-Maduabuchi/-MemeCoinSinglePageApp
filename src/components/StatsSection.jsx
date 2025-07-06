@@ -84,6 +84,7 @@ const TextBlock = styled.div`
     margin-bottom: 16px;
     font-size: 28px;
     color: #fff;
+    text-transform: uppercase;
   }
 
   & p {
@@ -193,7 +194,7 @@ export default function StatsSection() {
       {/* MEMINOMICS */}
       <MeminomicsWrapper>
         <TextBlock>
-          <h2>MEMINOMICS</h2>
+          <h2>Mememinomics</h2>
           <p>
             60% of the tokens were sent to the liquidity pool. LP tokens were
             burnt once renounced. The remaining 40% of the supply is being held

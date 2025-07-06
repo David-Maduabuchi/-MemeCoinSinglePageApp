@@ -30,7 +30,7 @@ const HeroSection = styled.section`
   ${mobile} {
     height: auto;
     padding: 60px 0 100px;
-    height: 750px;
+    height: 600px;
     overflow: auto;
   }
   ${tablet} {
@@ -169,7 +169,7 @@ const TickerContent = styled.div`
   ${mobile} {
     line-height: 40px;
     font-size: 20px;
-    animation-duration: 10s;
+    animation-duration: 20s;
   }
 `;
 const TagContainer = styled.div`
@@ -205,16 +205,13 @@ const Title = styled(motion.h1)`
   pointer-events: none;
 
   ${mobile} {
-    /* font-size: clamp(3rem, 20vw, 8rem); */
-    font-size: 3rem;
+    text-align: center;
     top: 60%;
     transform: none;
     white-space: normal;
   }
 
   ${tablet} {
-    /* font-size: clamp(3rem, 20vw, 8rem); */
-    font-size: 8rem;
     top: 80%;
     transform: none;
     white-space: normal;
@@ -241,16 +238,17 @@ const BuyBar = styled.div`
   display: flex;
   gap: 16px; /* space between the two controls */
   ${mobile} {
-    flex-direction: column;
-    bottom: 10%;
-    width: 90%;
+    bottom: 18%;
+    width: 100%;
+    gap: 8px;
+    /* flex-direction: column; */
   }
 `;
 
 const BuyButton = styled.button`
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 8px; /* space between icon and text */
+  gap: 8px;
   background: #fff;
   border: 2px solid #000;
   padding: 0px 0px;
@@ -267,8 +265,16 @@ const BuyButton = styled.button`
   }
   ${mobile} {
     justify-content: center;
-    width: 100%;
-    font-size: 14px;
+    font-size: 10px;
+    width: 210px;
+    height: 40px;
+    margin: 0;
+    gap: 5px;
+    font-weight: 900;
+    img {
+      width: 14px;
+      height: auto;
+    }
   }
 `;
 
@@ -280,6 +286,7 @@ const AddressContainer = styled.div`
   overflow: hidden;
   align-items: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  position: relative;
 
   ${mobile} {
     width: 100%;
@@ -306,6 +313,7 @@ const AddressInput = styled.input`
 
   ${mobile} {
     font-size: 10px;
+    width: 100%;
   }
 `;
 
@@ -326,8 +334,11 @@ const CopyButton = styled.button`
 
   ${mobile} {
     margin: 0;
-    font-size: 10px;
-    width: 130px;
+    font-size: 8px;
+    width: 80px;
+    right: 10px;
+
+    position: absolute;
   }
 `;
 export default function Hero() {
