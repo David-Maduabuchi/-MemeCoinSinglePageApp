@@ -231,17 +231,99 @@ const TitleWrapper = styled.div`
 const BuyBar = styled.div`
   position: absolute;
   bottom: 20%;
-  left: 50%;
+  left: 60%;
+  transform: translateX(-50%);
+  z-index: 60;
+  display: flex;
+  gap: 16px;
+  margin-left: -10%;
+  width: 40%;
+  
+
+   ${mobile} {
+    align-items: center; 
+    width: 41%;          
+    gap: 0px;  
+    margin-right: 500px;         
+    bottom: 15%;         
+    transform: translateX(-50%);
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    border: 2px solid #000;
+    padding: 10px 10px;
+    
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 30%;
+    margin-left: 1%;
+    text-decoration: none;
+    color: black;
+
+    img {
+      width: 24px;
+      height: 24px;
+    }
+
+    ${mobile} {
+      display: none;
+    }
+  }
+
+  
+  a.mobile-button-buy {
+  display: none;
+
+  ${mobile} {
+    display: inline-flex;
+    align-items: center;
+    gap: 0px;
+
+   
+    background: #fff;     
+    color: #000;               /* same text color */
+    border: 2px solid #000;    /* same border */
+    border-radius: 8px;
+    left: 70%;
+    
+    padding: 8px 12px;         
+    font-size: 12px;           
+    width: auto;                   
+    justify-content: center;
+    text-decoration: none;
+  
+
+  
+  img {
+    width: 16px;
+    height: 16px;
+     display: block;
+  }
+}
+
+`;
+
+
+const CopyBar = styled.div`
+  position: absolute;
+  bottom: 20%;
+  left: 60%;
   transform: translateX(-50%);
   z-index: 6;
   display: flex;
-  gap: 16px;
+  gap: 0px;
 
    ${mobile} {
-    align-items: center;       /* center each button */
-    width: 70%;                /* take up most of the screen */
-    gap: 50px;                 /* space between buy & copy */
-    bottom: 12%;               /* if you want it a bit higher/lower */
+    align-items: center; 
+    width: 60%;          
+    gap: 0px;  
+    left: 80%;         
+    bottom: 15%;         
     transform: translateX(-50%);
   }
 
@@ -271,44 +353,40 @@ const BuyBar = styled.div`
     }
   }
 
+  
   a.mobile-button-buy {
-    display: none;
-    ${mobile} {
-      display: flex;
-      
-      background: #ff8e00;
-      color: #fff;
-      border: none;
-      padding: 15px 16px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      width: 100%;
-      font-size: 12px;
-      justify-content: center;
-      align-items: center;
-    }
-  }
+  display: none;
 
-  .mobile-button-copy {
-    display: none;
-    ${mobile} {
-      
-      display: flex;
-      background: #ff8e00;
-      color: #fff;
-      border: none;
-      padding: 15px 16px;
-      border-radius: 8px;
-      font-weight: bold;
-      cursor: pointer;
-      width: 350px;
-      font-size: 12px;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
+  ${mobile} {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+   
+    background: #fff;     
+    color: #000;               /* same text color */
+    border: 2px solid #000;    /* same border */
+    border-radius: 8px;
+
+    
+    padding: 8px 12px;         
+    font-size: 12px;           
+    width: auto;               
+    
+    
+    top: -100px;     
+    justify-content: center;
+    text-decoration: none;
+  
+
+  
+  img {
+    width: 16px;
+    height: 16px;
+     display: block;
   }
+}
+
 `;
 
 const AddressContainer = styled.div`
@@ -322,7 +400,10 @@ const AddressContainer = styled.div`
   position: relative;
 
   ${mobile} {
-    display: none;
+    display: flex;
+    margin-bottom: -50px;
+    width: 10000px;
+    left: -50%;
   }
 `;
 
@@ -339,6 +420,12 @@ const AddressInput = styled.input`
   width: 320px;
   font-family: monospace;
   outline: none;
+  overflow-x: auto;
+  white-space: nowrap;
+
+  /* optional: hide the scrollbar but still allow scrolling */
+  &::-webkit-scrollbar {
+    height: 0;
 
   ${mobile} {
     font-size: 10px;
@@ -365,11 +452,10 @@ const CopyButton = styled.button`
   }
 
   ${mobile} {
-    margin: 0;
+    
     font-size: 8px;
-    width: 80px;
-    right: 10px;
-
+    width: 70px;
+    right: 3px;
     position: absolute;
   }
 `;
@@ -458,9 +544,11 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="mobile-button-buy"
           >
-            Buy Now
+          <img src="header_logo2.png" alt="Buy Icon" />
+            Buy $MemeCoin
           </a>
-
+        </BuyBar>
+        <CopyBar>
           <AddressContainer>
             <AddressInput
               type="text"
@@ -469,10 +557,8 @@ export default function Hero() {
             />
             <CopyButton onClick={handleCopy}>Copy address</CopyButton>
           </AddressContainer>
-          <CopyButton className="mobile-button-copy" onClick={handleCopy}>
-            Copy address
-          </CopyButton>
-        </BuyBar>
+        </CopyBar>
+        
         <TickerBar>
           <TickerContent>
             No pitch decks. No whitepapers. No complex tech. Just the mostviral,

@@ -13,9 +13,11 @@ const Nav = styled.nav`
   padding: 16px 32px;
   background: #fff;
   border-bottom: 4px solid #000;
-  position: sticky;
+  position: fixed;
+  width: 100%;             
+  z-index: 1000;      
   top: 0;
-  z-index: 10;
+  
 `;
 
 const NavLinks = styled.div`
