@@ -230,8 +230,8 @@ const TitleWrapper = styled.div`
 
 const BuyBar = styled.div`
   position: absolute;
-  bottom: 25%;
-  left: 60%;
+  bottom: 20%;
+  left: 50%;
   transform: translateX(-50%);
   z-index: 60;
   display: flex;
@@ -246,7 +246,7 @@ const BuyBar = styled.div`
     padding-right: 10px;
     margin-right: 200px;         
     margin-left: -90%
-    bottom: 26%;         
+    bottom: 40%;         
     transform: translateX(-50%);
   }
 
@@ -284,7 +284,8 @@ const BuyBar = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 0px;
-
+    margin-left: 43%;
+    margin-bottom: 18px;
    
     background: #fff;     
     color: #000;               /* same text color */
