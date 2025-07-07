@@ -230,7 +230,7 @@ const TitleWrapper = styled.div`
 
 const BuyBar = styled.div`
   position: absolute;
-  bottom: 20%;
+  bottom: 25%;
   left: 60%;
   transform: translateX(-50%);
   z-index: 60;
@@ -242,10 +242,11 @@ const BuyBar = styled.div`
 
    ${mobile} {
     align-items: center; 
-    width: 41%;          
-    gap: 0px;  
-    margin-right: 500px;         
-    bottom: 15%;         
+    width: 100%;          
+    padding-right: 10px;
+    margin-right: 200px;         
+    margin-left: -90%
+    bottom: 26%;         
     transform: translateX(-50%);
   }
 
@@ -261,7 +262,7 @@ const BuyBar = styled.div`
     font-weight: bold;
     cursor: pointer;
     width: 30%;
-    margin-left: 1%;
+    margin-left: 33%;
     text-decoration: none;
     color: black;
 
@@ -289,9 +290,10 @@ const BuyBar = styled.div`
     color: #000;               /* same text color */
     border: 2px solid #000;    /* same border */
     border-radius: 8px;
-    left: 70%;
+    left: 10%;
     
-    padding: 8px 12px;         
+    padding: 12px 12px;
+    padding-right: 20px;         
     font-size: 12px;           
     width: auto;                   
     justify-content: center;
@@ -303,6 +305,7 @@ const BuyBar = styled.div`
     width: 16px;
     height: 16px;
      display: block;
+     margin-right: 10px;
   }
 }
 
@@ -401,9 +404,9 @@ const AddressContainer = styled.div`
 
   ${mobile} {
     display: flex;
-    margin-bottom: -50px;
-    width: 10000px;
-    left: -50%;
+    margin-bottom: -10px;
+    width: 70%;
+    left: -30%;
   }
 `;
 
