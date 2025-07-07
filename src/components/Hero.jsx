@@ -285,7 +285,7 @@ const BuyBar = styled.div`
     align-items: center;
     gap: 0px;
     margin-left: 43%;
-    margin-bottom: 18px;
+    margin-bottom: 20px;
    
     background: #fff;     
     color: #000;               /* same text color */
