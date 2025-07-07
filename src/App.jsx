@@ -30,7 +30,6 @@ export default function App() {
       <Navbar />
       <Hero />
       <NativeLanguage />
-      <StatsSection />
       <HowToBuySection />
       <FooterSection />
     </Main>
