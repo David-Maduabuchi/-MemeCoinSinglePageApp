@@ -183,19 +183,19 @@ export default function StatsSection() {
       <MarketGrid>
         <DataCard>
           <Label>Price</Label>
-          <Value>$0.280209</Value>
+          <Value>$0.001500</Value>
         </DataCard>
         <DataCard>
           <Label>Market Cap</Label>
-          <Value>$282.15M</Value>
+          <Value>$1.5M</Value>
         </DataCard>
         <DataCard>
           <Label>24h Volume</Label>
-          <Value>$19.20M</Value>
+          <Value>$6.6M</Value>
         </DataCard>
         <DataCard>
           <Label>Holders</Label>
-          <Value>20,269</Value>
+          <Value>4394</Value>
         </DataCard>
       </MarketGrid>
 
