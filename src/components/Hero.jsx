@@ -11,7 +11,8 @@ const TickerStyles = createGlobalStyle`
 `;
 
 const mobile = "@media (max-width: 768px)";
-const tablet = "@media (min-width: 769px) and (max-width: 1280px)";
+const large = "@media (min-width: 1500px)";
+const tablet = "@media (min-width: 769px) and (max-width: 1500px)";
 
 const HeroSection = styled.section`
   position: relative;
@@ -87,7 +88,7 @@ const HeroImage = styled(motion.img)`
     width: 450px;
     margin-bottom: 200px;
     height: auto;
-     &.logo-desktop {
+    &.logo-desktop {
       display: none;
     }
 
@@ -175,7 +176,6 @@ const TickerBar = styled.div`
 const TickerWrapper = styled.div`
   width: 200%;
   display: flex;
-  
 `;
 const TickerContent = styled.div`
   display: inline-block;
@@ -188,18 +188,18 @@ const TickerContent = styled.div`
   font-weight: bold;
   line-height: 40px;
   font-size: 40px;
-   span {
+  span {
     display: inline-block;
     padding-right: 50px;
   }
 
   ${mobile} {
-    line-height: 10px; !important;
+    line-height: 10px;
     font-size: 30px;
-    margin-top: 10px; !important;
-    height: 10px; !important;
+    margin-top: 10px;
+    height: 10px;
     animation-duration: 10s;
-     span {
+    span {
       padding-right: 30px;
     }
   }
@@ -236,17 +236,20 @@ const Title = styled(motion.h1)`
   color: #000;
   pointer-events: none;
 
-${mobile} {
+  ${mobile} {
     top: 75%;
-    font-size: clamp(5rem, 34.5vw, 11rem); 
-    transform: translate(-50%, -50%) scaleY(1.7);  
-    white-space: normal;           
+    font-size: clamp(5rem, 34.5vw, 11rem);
+    transform: translate(-50%, -50%) scaleY(1.7);
+    white-space: normal;
   }
 
   ${tablet} {
     top: 80%;
     transform: none;
     white-space: normal;
+  }
+  ${large} {
+    font-size: clamp(17.6rem, 50vw, 12rem);
   }
 `;
 
@@ -274,17 +277,15 @@ const BuyBar = styled.div`
   height: 70px;
   padding-right: 140px;
   font-size: 20px;
-  
 
-   ${mobile} {
-    
-    align-items: center; 
+  ${mobile} {
+    align-items: center;
     text-align: center;
-    width: 100%;          
+    width: 100%;
     padding-right: 10px;
-    margin-right: 10px;         
-    margin-left: -20%
-    bottom: 25%;         
+    margin-right: 10px;
+    margin-left: -20%;
+    bottom: 25%;
     transform: translateX(-50%);
   }
 
@@ -295,13 +296,13 @@ const BuyBar = styled.div`
     background: #fff;
     border: 2px solid #000;
     padding: 10px 10px;
-    
+
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
     width: 30%;
     margin-left: 30%;
-    
+
     text-decoration: none;
     color: black;
 
@@ -315,46 +316,41 @@ const BuyBar = styled.div`
     }
   }
 
-  
   a.mobile-button-buy {
-  display: none;
+    display: none;
 
-  ${mobile} {
-    display: flex;
-    position: absolute;
-    align-items: center;
-    text-align: left;
-    gap: 0px;
-    margin-left: 0%;
-    margin-bottom: 12px;
-    font-family: "Arial";
-    background: #fff;     
-    color: #000;              
-    border: 2px solid #000;   
-    border-radius: 8px;
-    left: 36.5%;
-    height: 51px;
-    
-    padding-right: -100px;  
-           
-    font-size: 15px;           
-    width: 170px;   
-    
-    
-    text-decoration: none;
-  
+    ${mobile} {
+      display: flex;
+      position: absolute;
+      align-items: center;
+      text-align: left;
+      gap: 0px;
+      margin-left: 0%;
+      margin-bottom: 12px;
+      font-family: "Arial";
+      background: #fff;
+      color: #000;
+      border: 2px solid #000;
+      border-radius: 8px;
+      left: 36.5%;
+      height: 51px;
 
-  
-  img {
-    width: 16px;
-    height: 16px;
-     
-     margin-right: 10px;
+      padding-right: -100px;
+
+      font-size: 15px;
+      width: 170px;
+
+      text-decoration: none;
+
+      img {
+        width: 16px;
+        height: 16px;
+
+        margin-right: 10px;
+      }
+    }
   }
-}
-
 `;
-
 
 const CopyBar = styled.div`
   position: absolute;
@@ -365,18 +361,18 @@ const CopyBar = styled.div`
   display: flex;
   gap: 0px;
   height: 70px;
-  width: 1200px; 
+  width: 1200px;
   margin-right: 420px;
   padding-right: 120px;
   font-size: 21px;
-  
-   ${mobile} {
-    align-items: center; 
-    width: 71%;          
-    gap: 0px;  
-    left: 100%;         
-    font-size: 5px; !important;
-    bottom: 12%;         
+
+  ${mobile} {
+    align-items: center;
+    width: 71%;
+    gap: 0px;
+    left: 100%;
+    font-size: 5px;
+    bottom: 12%;
     transform: translateX(-50%);
   }
 
@@ -406,40 +402,35 @@ const CopyBar = styled.div`
     }
   }
 
-  
   a.mobile-button-buy {
-  display: none;
+    display: none;
 
-  ${mobile} {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 5px; !important;
-   
-    background: #fff;     
-    color: #000;               /* same text color */
-    border: 2px solid #000;    /* same border */
-    border-radius: 8px;
+    ${mobile} {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 5px;
 
-    
-    padding: 8px 12px;         
-    font-size: 12px;           
-    width: auto;               
-    
-    
-    top: -100px;     
-    justify-content: center;
-    text-decoration: none;
-  
+      background: #fff;
+      color: #000; /* same text color */
+      border: 2px solid #000; /* same border */
+      border-radius: 8px;
 
-  
-  img {
-    width: 16px;
-    height: 16px;
-     display: block;
+      padding: 8px 12px;
+      font-size: 12px;
+      width: auto;
+
+      top: -100px;
+      justify-content: center;
+      text-decoration: none;
+
+      img {
+        width: 16px;
+        height: 16px;
+        display: block;
+      }
+    }
   }
-}
-
 `;
 
 const AddressContainer = styled.div`
@@ -448,38 +439,40 @@ const AddressContainer = styled.div`
   border: 2px solid #000;
   border-radius: 8px;
   padding-right: 120px;
-  
+
   overflow: hidden;
   align-items: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   position: relative;
   .copy-moblie {
-    display: none;}
-    .add-moblie {
-      display: none;
-    }
+    display: none;
+  }
+  .add-moblie {
+    display: none;
+  }
   ${mobile} {
     display: flex;
     margin-bottom: -10px;
     width: 64%;
     overflow: hidden;
-    font-size: 5px; !important;
+    font-size: 5px;
     white-space: nowrap;
     text-overflow: ellipsis;
-    
+
     position: absolute;
     left: -51%;
     padding-right: -30px;
 
     .copy-moblie {
-    display: block;}
+      display: block;
+    }
     .add-moblie {
-    display: block;}
+      display: block;
+    }
     .add-desktop {
       display: none;
     }
   }
-    
 `;
 
 const AddressLabel = styled.span`
@@ -499,27 +492,27 @@ const AddressInput = styled.input`
   font-size: 18px;
   white-space: nowrap;
   text-overflow: ellipsis;
-  
 
   /* optional: hide the scrollbar but still allow scrolling */
   &::-webkit-scrollbar {
     height: 0;
-  &.add-moblie {
-      display: none;
-    }
-  ${mobile} {
-    &.add-desktop {
-      display: none;
-    }
     &.add-moblie {
-      display: block;
+      display: none;
     }
-    font-size: 5px; !important;
-    width: 100%;
-     max-width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    ${mobile} {
+      &.add-desktop {
+        display: none;
+      }
+      &.add-moblie {
+        display: block;
+      }
+      font-size: 5px;
+      width: 100%;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
   }
 `;
 
@@ -543,11 +536,10 @@ const CopyButton = styled.button`
     background: #e07b00;
   }
   .copy-mobile {
-      display: none;
-    }
+    display: none;
+  }
 
   ${mobile} {
-    
     font-size: 15px;
     width: 70px;
     right: 3px;
@@ -570,7 +562,6 @@ const MobileHide = styled.span`
     display: none;
   }
 `;
-
 
 export default function Hero() {
   const handleCopy = () => {
@@ -645,7 +636,7 @@ export default function Hero() {
         >
           MEME<MobileHide>COIN</MobileHide>
         </Title>
-        
+
         <BuyBar>
           <a
             href="https://raydium.io/swap/?outputMint=4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk&inputMint=sol"
@@ -662,7 +653,7 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="mobile-button-buy"
           >
-          <img src="header_logo2.png" alt="Buy Icon" />
+            <img src="header_logo2.png" alt="Buy Icon" />
             Buy $MemeCoin
           </a>
         </BuyBar>
@@ -672,32 +663,37 @@ export default function Hero() {
               type="text"
               value="CA: 4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk"
               readOnly
-              style={{ direction: 'ltr' }} 
+              style={{ direction: "ltr" }}
               className="add-desktop"
             />
             <AddressInput
               type="text"
               value="CA: 4dao..."
               readOnly
-              style={{ direction: 'ltr', fontSize: '15px' }} 
+              style={{ direction: "ltr", fontSize: "15px" }}
               className="add-moblie"
             />
-            <CopyButton onClick={handleCopy} className="copy-desktop">Copy address</CopyButton>
-            <CopyButton onClick={handleCopy} className="copy-moblie">Copy</CopyButton>
+            <CopyButton onClick={handleCopy} className="copy-desktop">
+              Copy address
+            </CopyButton>
+            <CopyButton onClick={handleCopy} className="copy-moblie">
+              Copy
+            </CopyButton>
           </AddressContainer>
         </CopyBar>
-        
-        
+
         <TickerBar>
           <TickerWrapper>
             <TickerContent>
               <span>
-                No pitch decks. No whitepapers. No complex tech. Just the most viral,
-                relatable, and unstoppable narrative in crypto history &nbsp;&nbsp;
+                No pitch decks. No whitepapers. No complex tech. Just the most
+                viral, relatable, and unstoppable narrative in crypto history
+                &nbsp;&nbsp;
               </span>
               <span>
-                No pitch decks. No whitepapers. No complex tech. Just the most viral,
-                relatable, and unstoppable narrative in crypto history &nbsp;&nbsp;
+                No pitch decks. No whitepapers. No complex tech. Just the most
+                viral, relatable, and unstoppable narrative in crypto history
+                &nbsp;&nbsp;
               </span>
             </TickerContent>
           </TickerWrapper>

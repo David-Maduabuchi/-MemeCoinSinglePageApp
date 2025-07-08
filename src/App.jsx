@@ -11,11 +11,13 @@ import FooterSection from './components/FooterSection';
 const GlobalStyle = createGlobalStyle`
   *, *::before, *::after { box-sizing: border-box; }
   body, html {
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     overflow-x: hidden;
     font-family: Arial;
     background-color: #fff;
+    max-width: 1500px;
+    
   }
 `;
 
