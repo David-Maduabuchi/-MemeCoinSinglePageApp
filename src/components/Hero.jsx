@@ -164,9 +164,11 @@ const TickerBar = styled.div`
   overflow: hidden;
   height: 60px;
   z-index: 6;
+  padding-bottom: 80px;
 
   ${mobile} {
     height: 60px;
+    padding-bottom: 50px;
   }
 `;
 
@@ -262,14 +264,15 @@ const TitleWrapper = styled.div`
 const BuyBar = styled.div`
   position: absolute;
   bottom: 20%;
-  left: 46%;
+  left: 56%;
   transform: translateX(-50%);
   z-index: 60;
   display: flex;
   gap: 16px;
-  margin-left: -20%;
+  margin-left: -14%;
   width: 60%;
   height: 70px;
+  padding-right: 140px;
   font-size: 20px;
   
 
@@ -297,7 +300,8 @@ const BuyBar = styled.div`
     font-weight: bold;
     cursor: pointer;
     width: 30%;
-    margin-left: 33%;
+    margin-left: 30%;
+    
     text-decoration: none;
     color: black;
 
@@ -322,18 +326,20 @@ const BuyBar = styled.div`
     text-align: left;
     gap: 0px;
     margin-left: 0%;
-    margin-bottom: 10px;
-   
+    margin-bottom: 12px;
+    font-family: "Arial";
     background: #fff;     
     color: #000;              
     border: 2px solid #000;   
     border-radius: 8px;
-    left: 52.5%;
+    left: 36.5%;
+    height: 51px;
     
-    
-    padding-right: -0px;         
+    padding-right: -100px;  
+           
     font-size: 15px;           
-    width: 185px;                   
+    width: 170px;   
+    
     
     text-decoration: none;
   
@@ -353,19 +359,23 @@ const BuyBar = styled.div`
 const CopyBar = styled.div`
   position: absolute;
   bottom: 20%;
-  left: 62%;
-  transform: translateX(-50%);
+  left: 40%;
+  transform: translateX(5%);
   z-index: 6;
   display: flex;
   gap: 0px;
   height: 70px;
-  width: 700px;
+  width: 1200px; 
+  margin-right: 420px;
+  padding-right: 120px;
   font-size: 21px;
+  
    ${mobile} {
     align-items: center; 
     width: 71%;          
     gap: 0px;  
-    left: 84%;         
+    left: 100%;         
+    font-size: 5px; !important;
     bottom: 12%;         
     transform: translateX(-50%);
   }
@@ -381,7 +391,7 @@ const CopyBar = styled.div`
     border-radius: 8px;
     font-weight: bold;
     cursor: pointer;
-    width: 30%;
+    width: 90%;
     margin-left: 1%;
     text-decoration: none;
     color: black;
@@ -404,7 +414,7 @@ const CopyBar = styled.div`
     display: inline-flex;
     align-items: center;
     gap: 8px;
-
+    font-size: 5px; !important;
    
     background: #fff;     
     color: #000;               /* same text color */
@@ -437,6 +447,7 @@ const AddressContainer = styled.div`
   background: #fff;
   border: 2px solid #000;
   border-radius: 8px;
+  padding-right: 120px;
   
   overflow: hidden;
   align-items: center;
@@ -447,8 +458,16 @@ const AddressContainer = styled.div`
   ${mobile} {
     display: flex;
     margin-bottom: -10px;
-    width: 70%;
-    left: -30%;
+    width: 64%;
+    overflow: hidden;
+    font-size: 5px; !important;
+white-space: nowrap;
+text-overflow: ellipsis;
+    
+    position: absolute;
+    left: -51%;
+    padding-right: -30px;
+
     .copy-moblie {
     display: block;}
   }
@@ -466,20 +485,32 @@ const AddressInput = styled.input`
   padding: 14px;
   font-weight: bold;
   width: 320px;
-  font-family: monospace;
+  font-family: Arial;
   outline: none;
-  overflow-x: auto;
+  overflow: hidden;
   font-size: 18px;
   white-space: nowrap;
+  text-overflow: ellipsis;
   
 
   /* optional: hide the scrollbar but still allow scrolling */
   &::-webkit-scrollbar {
     height: 0;
-
+   &.copy-moblie {
+      display: none;
+    }
   ${mobile} {
-    font-size: 10px;
+    &.copy-desktop {
+      display: none;
+    }
+    &.copy-moblie {
+      display: block;
+    }
+    font-size: 5px; !important;
     width: 100%;
+     max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
   }
 `;
@@ -490,6 +521,8 @@ const CopyButton = styled.button`
   border: none;
   margin-top: 1%;
   margin-right: 2%;
+  position: absolute;
+  right: 1%;
   padding: 2px 5px;
   height: 80%;
   width: 110px;
@@ -529,6 +562,8 @@ const MobileHide = styled.span`
     display: none;
   }
 `;
+
+
 export default function Hero() {
   const handleCopy = () => {
     const fullValue = "CA: 4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk";
@@ -602,6 +637,7 @@ export default function Hero() {
         >
           MEME<MobileHide>COIN</MobileHide>
         </Title>
+        
         <BuyBar>
           <a
             href="https://raydium.io/swap/?outputMint=4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk&inputMint=sol"
@@ -628,11 +664,21 @@ export default function Hero() {
               type="text"
               value="CA: 4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk"
               readOnly
+              style={{ direction: 'ltr' }} 
+              className="copy-desktop"
+            />
+            <AddressInput
+              type="text"
+              value="CA: 4dao"
+              readOnly
+              style={{ direction: 'ltr' }} 
+              className="copy-moblie"
             />
             <CopyButton onClick={handleCopy} className="copy-desktop">Copy address</CopyButton>
             <CopyButton onClick={handleCopy} className="copy-moblie">Copy</CopyButton>
           </AddressContainer>
         </CopyBar>
+        
         
         <TickerBar>
           <TickerWrapper>

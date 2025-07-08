@@ -173,7 +173,7 @@ export default function HowToBuySection() {
               <StepTitle>You’re welcome</StepTitle>
               <StepText>
                 Your MEMECOIN tokens should now be in your wallet. Welcome to
-                the $TARD-fun!
+                the $MEMECOIN-fun!
               </StepText>
             </StepCard>
           </RightColumn>
