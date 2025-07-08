@@ -455,14 +455,17 @@ const AddressContainer = styled.div`
   position: relative;
   .copy-moblie {
     display: none;}
+    .add-moblie {
+      display: none;
+    }
   ${mobile} {
     display: flex;
     margin-bottom: -10px;
     width: 64%;
     overflow: hidden;
     font-size: 5px; !important;
-white-space: nowrap;
-text-overflow: ellipsis;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     
     position: absolute;
     left: -51%;
@@ -470,6 +473,11 @@ text-overflow: ellipsis;
 
     .copy-moblie {
     display: block;}
+    .add-moblie {
+    display: block;}
+    .add-desktop {
+      display: none;
+    }
   }
     
 `;
@@ -496,14 +504,14 @@ const AddressInput = styled.input`
   /* optional: hide the scrollbar but still allow scrolling */
   &::-webkit-scrollbar {
     height: 0;
-   &.copy-moblie {
+  &.add-moblie {
       display: none;
     }
   ${mobile} {
-    &.copy-desktop {
+    &.add-desktop {
       display: none;
     }
-    &.copy-moblie {
+    &.add-moblie {
       display: block;
     }
     font-size: 5px; !important;
@@ -665,14 +673,14 @@ export default function Hero() {
               value="CA: 4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk"
               readOnly
               style={{ direction: 'ltr' }} 
-              className="copy-desktop"
+              className="add-desktop"
             />
             <AddressInput
               type="text"
-              value="CA: 4dao"
+              value="CA: 4dao..."
               readOnly
-              style={{ direction: 'ltr' }} 
-              className="copy-moblie"
+              style={{ direction: 'ltr', fontSize: '15px' }} 
+              className="add-moblie"
             />
             <CopyButton onClick={handleCopy} className="copy-desktop">Copy address</CopyButton>
             <CopyButton onClick={handleCopy} className="copy-moblie">Copy</CopyButton>
