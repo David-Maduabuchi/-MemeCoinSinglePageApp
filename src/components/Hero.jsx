@@ -104,6 +104,14 @@ const HeroImage = styled(motion.img)`
     height: auto;
     margin: 0;
   }
+
+  ${large} {
+    max-width: 100vw;
+    height: auto;
+    position: absolute;
+    margin: 0;
+    top: 70px;
+  }
 `;
 
 const IconTag = styled(motion.div)`
