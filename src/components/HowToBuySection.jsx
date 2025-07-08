@@ -7,15 +7,18 @@ const tablet = "@media (min-width: 769px) and (max-width: 1280px)";
 
 const Section = styled.section`
   position: relative;
-  background: url("beach.png") bottom center no-repeat;
+  background: url("beach2.png") bottom center no-repeat;
   background-size: contain;
   background-position: 0% 20%;
   padding: 100px 20px 60px;
   color: #333;
 
   ${mobile} {
-    background-position: 10% 40%;
+    background-position: 0%  90%;
+    background-size: 150% auto;
     height: fit-content;
+    padding-bottom: 560px;
+    
   }
 `;
 
@@ -38,7 +41,8 @@ const Title = styled.h2`
 
   ${mobile} {
     font-size: 2.25rem;
-    margin-bottom: 20px;
+    margin-top: -40px;
+    margin-bottom: 10px;
   }
 `;
 
@@ -91,9 +95,11 @@ const StepNumber = styled.div`
   font-size: 128px;
 
   ${mobile} {
-    font-size: 2.5rem;
+    font-size: 6.5rem;
     top: 16px;
     left: 16px;
+    margin-left: -11px;
+    margin-right: -30px;
   }
 `;
 
@@ -101,6 +107,9 @@ const StepTitle = styled.h3`
   font-size: 1.5rem;
   margin: 0 0 12px;
   color: #333;
+  font-family: Arial;
+  font-weight: 950;
+  font-style: Bold;
 
   ${mobile} {
     font-size: 1.25rem;
@@ -116,7 +125,7 @@ const StepText = styled.p`
   line-height: 126%;
 
   ${mobile} {
-    font-size: 0.9rem;
+    font-size: 1.0rem;
   }
 `;
 

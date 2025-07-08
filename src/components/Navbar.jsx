@@ -12,7 +12,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   padding: 16px 32px;
   background: #fff;
-  border-bottom: 4px solid #000;
+  border-bottom: 0px solid #000;
   position: fixed;
   width: 100%;             
   z-index: 1000;      
@@ -43,7 +43,7 @@ const BrandLink = styled.a`
 const Logo = styled.img`
   height: 40px;
   ${mobile} {
-    width: 50px;
+    width: 30px;
     height: auto;
   }
 `;
@@ -54,7 +54,7 @@ const BrandText = styled.span`
   color: #000;
 
   ${mobile} {
-    font-size: 14px;
+    font-size: 18.5px;
   }
 `;
 const Icons = styled.div`
@@ -95,6 +95,11 @@ const BuyButton = styled.button`
     text-decoration: none;
     color: inherit;
   }
+    ${mobile} {
+    padding: 15px 16px;
+    width: 114px;
+    height: 43px;
+  }
 `;
 
 export default function Navbar() {
@@ -106,7 +111,8 @@ export default function Navbar() {
         <a href="#dapp">dApp</a>
       </NavLinks>
       <BrandLink href="/">
-        <Logo src="header_logo2.png" alt="MemeCoin Logo" />
+        <Logo src="header_logo2.png" alt="MemeCoin Logo" className="logo-desktop" />
+        
         <BrandText>MEMECOIN</BrandText>
       </BrandLink>
       <Icons>

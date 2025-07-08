@@ -5,8 +5,8 @@ import styled, { createGlobalStyle } from "styled-components";
 
 const TickerStyles = createGlobalStyle`
   @keyframes scroll {
-    0% { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
   }
 `;
 
@@ -78,12 +78,25 @@ const HeroImage = styled(motion.img)`
   height: 100%;
   max-width: 35%;
   margin-bottom: 110px;
+  &.logo-mobile {
+    display: none;
+  }
   ${mobile} {
     max-width: 100vw;
     min-width: 200px;
     width: 450px;
     margin-bottom: 200px;
     height: auto;
+     &.logo-desktop {
+      display: none;
+    }
+
+    &.logo-mobile {
+      display: block;
+      width: auto;
+      max-width: 90%;
+      height: auto;
+    }
   }
   ${tablet} {
     max-width: 100vw;
@@ -111,10 +124,11 @@ const IconTag = styled(motion.div)`
     font-size: 12px;
     padding: 4px 8px;
     border: 2px;
-    width: 70px;
+    width: 100px;
     font-size: 9px;
     gap: 5px;
-    left: 5%;
+    top: 35%;
+    left: 0%;
   }
 `;
 
@@ -123,7 +137,8 @@ const StarTag = styled(IconTag)`
   left: 32%;
 
   ${mobile} {
-    left: 2%;
+    top: 63%;
+    left: 30%;
   }
 `;
 
@@ -136,8 +151,9 @@ const RocketTag = styled(IconTag)`
   top: 25%;
   left: 70%;
   ${mobile} {
+    top: 45%;
     left: 65%;
-    width: 110px;
+    width: 130px;
   }
 `;
 const TickerBar = styled.div`
@@ -154,21 +170,36 @@ const TickerBar = styled.div`
   }
 `;
 
+const TickerWrapper = styled.div`
+  width: 200%;
+  display: flex;
+  
+`;
 const TickerContent = styled.div`
   display: inline-block;
   white-space: nowrap;
   padding-left: 0;
+  flex-shrink: 0;
   padding-top: 15px;
-  animation: scroll 20s linear infinite;
+  animation: scroll 10s linear infinite;
   color: #fff;
   font-weight: bold;
   line-height: 40px;
   font-size: 40px;
+   span {
+    display: inline-block;
+    padding-right: 50px;
+  }
 
   ${mobile} {
-    line-height: 40px;
-    font-size: 20px;
-    animation-duration: 20s;
+    line-height: 10px; !important;
+    font-size: 30px;
+    margin-top: 10px; !important;
+    height: 10px; !important;
+    animation-duration: 10s;
+     span {
+      padding-right: 30px;
+    }
   }
 `;
 const TagContainer = styled.div`
@@ -205,9 +236,9 @@ const Title = styled(motion.h1)`
 
 ${mobile} {
     top: 75%;
-    font-size: clamp(5rem, 34.5vw, 11rem); /* bigger on small screens */
-    transform: translate(-50%, -50%) scaleY(1.7);  /* normal height */
-    white-space: normal;            /* allow wrapping if needed */
+    font-size: clamp(5rem, 34.5vw, 11rem); 
+    transform: translate(-50%, -50%) scaleY(1.7);  
+    white-space: normal;           
   }
 
   ${tablet} {
@@ -231,22 +262,26 @@ const TitleWrapper = styled.div`
 const BuyBar = styled.div`
   position: absolute;
   bottom: 20%;
-  left: 50%;
+  left: 46%;
   transform: translateX(-50%);
   z-index: 60;
   display: flex;
   gap: 16px;
-  margin-left: -10%;
-  width: 40%;
+  margin-left: -20%;
+  width: 60%;
+  height: 70px;
+  font-size: 20px;
   
 
    ${mobile} {
+    
     align-items: center; 
+    text-align: center;
     width: 100%;          
     padding-right: 10px;
-    margin-right: 200px;         
-    margin-left: -90%
-    bottom: 40%;         
+    margin-right: 10px;         
+    margin-left: -20%
+    bottom: 25%;         
     transform: translateX(-50%);
   }
 
@@ -281,23 +316,25 @@ const BuyBar = styled.div`
   display: none;
 
   ${mobile} {
-    display: inline-flex;
+    display: flex;
+    position: absolute;
     align-items: center;
+    text-align: left;
     gap: 0px;
-    margin-left: 43%;
-    margin-bottom: 20px;
+    margin-left: 0%;
+    margin-bottom: 10px;
    
     background: #fff;     
-    color: #000;               /* same text color */
-    border: 2px solid #000;    /* same border */
+    color: #000;              
+    border: 2px solid #000;   
     border-radius: 8px;
-    left: 10%;
+    left: 52.5%;
     
-    padding: 12px 12px;
-    padding-right: 20px;         
-    font-size: 12px;           
-    width: auto;                   
-    justify-content: center;
+    
+    padding-right: -0px;         
+    font-size: 15px;           
+    width: 185px;                   
+    
     text-decoration: none;
   
 
@@ -305,7 +342,7 @@ const BuyBar = styled.div`
   img {
     width: 16px;
     height: 16px;
-     display: block;
+     
      margin-right: 10px;
   }
 }
@@ -316,18 +353,20 @@ const BuyBar = styled.div`
 const CopyBar = styled.div`
   position: absolute;
   bottom: 20%;
-  left: 60%;
+  left: 62%;
   transform: translateX(-50%);
   z-index: 6;
   display: flex;
   gap: 0px;
-
+  height: 70px;
+  width: 700px;
+  font-size: 21px;
    ${mobile} {
     align-items: center; 
-    width: 60%;          
+    width: 71%;          
     gap: 0px;  
-    left: 80%;         
-    bottom: 15%;         
+    left: 84%;         
+    bottom: 12%;         
     transform: translateX(-50%);
   }
 
@@ -398,17 +437,22 @@ const AddressContainer = styled.div`
   background: #fff;
   border: 2px solid #000;
   border-radius: 8px;
+  
   overflow: hidden;
   align-items: center;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
   position: relative;
-
+  .copy-moblie {
+    display: none;}
   ${mobile} {
     display: flex;
     margin-bottom: -10px;
     width: 70%;
     left: -30%;
+    .copy-moblie {
+    display: block;}
   }
+    
 `;
 
 const AddressLabel = styled.span`
@@ -425,7 +469,9 @@ const AddressInput = styled.input`
   font-family: monospace;
   outline: none;
   overflow-x: auto;
+  font-size: 18px;
   white-space: nowrap;
+  
 
   /* optional: hide the scrollbar but still allow scrolling */
   &::-webkit-scrollbar {
@@ -434,6 +480,7 @@ const AddressInput = styled.input`
   ${mobile} {
     font-size: 10px;
     width: 100%;
+    text-overflow: ellipsis;
   }
 `;
 
@@ -454,13 +501,27 @@ const CopyButton = styled.button`
   &:hover {
     background: #e07b00;
   }
+  .copy-mobile {
+      display: none;
+    }
 
   ${mobile} {
     
-    font-size: 8px;
+    font-size: 15px;
     width: 70px;
     right: 3px;
     position: absolute;
+    &.copy-desktop {
+      display: none;
+    }
+
+    &.copy-mobile {
+      display: flex;
+      position: absolute;
+      width: auto;
+      max-width: 90%;
+      height: auto;
+    }
   }
 `;
 const MobileHide = styled.span`
@@ -511,6 +572,15 @@ export default function Hero() {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
+          className="logo-desktop"
+        />
+        <HeroImage
+          src="combine.png"
+          alt="MemeCoin Mascot"
+          initial={{ y: 50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="logo-mobile"
         />
 
         <IconTag {...iconBounce} whileHover={{ scale: 1.2 }}>
@@ -559,15 +629,24 @@ export default function Hero() {
               value="CA: 4daoTLufDmV3ods48Zh8rymaZKBLtgEvuH9qALYLbonk"
               readOnly
             />
-            <CopyButton onClick={handleCopy}>Copy address</CopyButton>
+            <CopyButton onClick={handleCopy} className="copy-desktop">Copy address</CopyButton>
+            <CopyButton onClick={handleCopy} className="copy-moblie">Copy</CopyButton>
           </AddressContainer>
         </CopyBar>
         
         <TickerBar>
-          <TickerContent>
-            No pitch decks. No whitepapers. No complex tech. Just the mostviral,
-            relatable, and unstoppable narrative in crypto history &nbsp;{" "}
-          </TickerContent>
+          <TickerWrapper>
+            <TickerContent>
+              <span>
+                No pitch decks. No whitepapers. No complex tech. Just the most viral,
+                relatable, and unstoppable narrative in crypto history &nbsp;&nbsp;
+              </span>
+              <span>
+                No pitch decks. No whitepapers. No complex tech. Just the most viral,
+                relatable, and unstoppable narrative in crypto history &nbsp;&nbsp;
+              </span>
+            </TickerContent>
+          </TickerWrapper>
         </TickerBar>
       </HeroSection>
     </>

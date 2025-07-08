@@ -78,7 +78,8 @@ const MascotArea = styled.div`
   justify-content: space-around;
   align-items: flex-end;
   ${mobile} {
-    padding: 80px 0 20px;
+    padding: 30px 0 20px;
+    padding-top: 10px;
   }
 `;
 

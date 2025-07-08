@@ -18,7 +18,7 @@ const OverflowStripe = styled.img`
 
 const Section = styled.section`
   position: relative;
-  background: #101010;
+  background: #222222;
   color: #fff;
   padding: 0px 20px 40px;
   overflow: hidden;
@@ -35,6 +35,9 @@ const BackgroundText = styled.h1`
   white-space: nowrap;
   user-select: none;
   pointer-events: none;
+  ${mobile} {
+    display: none; 
+  }
 `;
 
 /** Main grid: Mascot | Content **/
@@ -43,6 +46,7 @@ const Grid = styled.div`
   grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 40px;
+  flex-direction: row;
   max-width: 1200px;
   margin: 0 auto;
 
@@ -50,6 +54,11 @@ const Grid = styled.div`
     grid-template-columns: 1fr;
     gap: 24px;
     text-align: center;
+    flex-direction: column;
+  }
+  .social-section {
+    order: 3;
+    flex-direction: column;
   }
 `;
 
@@ -58,9 +67,13 @@ const MascotImage = styled.img`
   width: 100%;
   max-width: 400px;
   justify-self: center;
-
+  order 0;
   ${mobile} {
     max-width: 250px;
+    margin-left: 20%;
+    order: 2;
+    &.on-desktop {
+      display: none; }  
   }
 `;
 
@@ -69,9 +82,16 @@ const Content = styled.div`
   display: flex;
   flex-direction: column;
   gap: 32px;
-
+  order: 1;
+  .on-mobile {
+    display: none;
+  }
   ${mobile} {
     gap: 24px;
+    .on-mobile {
+    display: flex;
+    
+  }
   }
 `;
 
@@ -80,7 +100,7 @@ const Title = styled.h2`
   color: #ff8e00;
   margin: 0;
   padding-top: 10%;
-
+  
   ${mobile} {
     font-size: 2rem;
   }
@@ -95,7 +115,8 @@ const Tagline = styled.p`
   line-height: 1.4;
 
   ${mobile} {
-    font-size: 1rem;
+    font-size: 1.4rem;
+    font-weight: 900;
     margin: 0 auto;
   }
 `;
@@ -113,7 +134,6 @@ const BuyBar = styled.div`
 
 const BuyButton = styled.button`
   display: inline-flex;
-  align-items: center;
   gap: 8px;
   background: #fff;
   color: #000;
@@ -121,7 +141,10 @@ const BuyButton = styled.button`
   padding: 12px 20px;
   border-radius: 8px;
   font-weight: bold;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
+  padding-top: 5px;
   a {
     text-decoration: none;
     color: inherit;
@@ -130,7 +153,29 @@ const BuyButton = styled.button`
   img {
     width: 24px;
     height: 24px;
+    padding: 1px;
+    position: relative;
+    top: 7px;
   }
+    ${mobile} {
+    padding: 10px 16px; 
+    width: 100%;
+    font-size: 1.1rem;
+    align-items: center;
+    justify-content: center;
+    a {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    }
+    img {
+      width: 20px;
+      height: 20px; 
+      margin-right: 10px;
+      position: relative;
+      top: 0px;
+      }
+    }
 
   &:hover {
     background: #e2e2e2;
@@ -174,7 +219,10 @@ const CopyButton = styled.button`
   transition: background 0.2s;
 
   &:hover {
-    background: #e03e00;
+    background: #e07b00;
+  }
+    ${mobile} { 
+    width: 100%;
   }
 `;
 
@@ -182,10 +230,11 @@ const CopyButton = styled.button`
 const SocialHeading = styled.h4`
   font-size: 1.25rem;
   color: #ff8e00;
-  margin-bottom: 5px;
-
+  margin-bottom: 15px;
+  order:1;
   ${mobile} {
     font-size: 1.1rem;
+    order: 3;
   }
 `;
 const SocialIcon = styled.div`
@@ -241,6 +290,9 @@ const FooterNote = styled.p`
   ${mobile} {
     font-size: 16px;
     text-align: center;
+    margin-left: 5%;
+    &.on-desktop {
+      display: none;}
   }
 `;
 
@@ -259,8 +311,9 @@ export default function FooterSection() {
       <OverflowStripe src="overflow2.png" alt="Footer top decorative stripe" />
       <BackgroundText>MEMECOIN</BackgroundText>
       <Grid>
-        <MascotImage src="footer-mascot.png" alt="MemeCoin mascot" />
+       <MascotImage src="footer-mascot.png" className="on-desktop" alt="MemeCoin mascot" />
         <Content>
+           <MascotImage src="footer-mascot.png" className="on-mobile" alt="MemeCoin mascot" />
           <Title>$MEMECOIN</Title>
           <Tagline>
             Is The Apex of Speculation Meets Storytelling. Don’t Overthink It.
@@ -274,7 +327,8 @@ export default function FooterSection() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                BUY NOW
+                <img src="header_logo2.png" alt="Buy Icon" />
+                Buy $MemeCoin
               </a>
             </BuyButton>
             <AddressContainer>
@@ -287,7 +341,7 @@ export default function FooterSection() {
             </AddressContainer>
           </BuyBar>
 
-          <div>
+          <div className="social-section">
             <SocialHeading>Stay In Touch</SocialHeading>
             <SocialIcons>
               <SocialIcon>
@@ -315,9 +369,10 @@ export default function FooterSection() {
                 <FaDiscord /></a>
               </SocialIcon>
             </SocialIcons>
+            <FooterNote className="on-mobile">© 2024 by Memecoin — All rights reserved</FooterNote>
           </div>
 
-          <FooterNote>© 2024 by Memecoin — All rights reserved</FooterNote>
+          <FooterNote className="on-desktop">© 2024 by Memecoin — All rights reserved</FooterNote>
         </Content>
       </Grid>
     </Section>
